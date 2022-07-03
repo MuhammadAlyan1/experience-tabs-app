@@ -1,13 +1,71 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --clr-body: #f1f5f8;
+  --clr-blue: #2caeba;
+  --clr-heading: #102a42;
+  --clr-company-btn-background: #dae2ec;
+  --clr-company-btn: #617d98;
+  --clr-paragraph: #324d67;
+  --clr-btn: #bff8fd;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0px;
+  padding: 2rem;
+  box-sizing: border-box;
+  background-color: var(--clr-body);
+}
+
+/*
+==============
+main-heading
+==============  
+*/
+
+.main-heading {
+  color: var(--clr-heading);
+  width: fit-content;
+  margin-bottom: 5rem;
+  margin-inline: auto;
+  position: relative;
+}
+
+.main-heading::before {
+  content: "";
+  width: 60%;
+  height: 4px;
+  position: absolute;
+  bottom: -30%;
+  left: 20%;
+  background-color: var(--clr-blue);
+}
+
+/*
+==============
+more-info-btn
+==============  
+*/
+
+.more-info-btn {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--clr-btn);
+  background-color: var(--clr-blue);
+  padding: 0.5rem 1rem;
+  margin-top: 3rem;
+  margin-inline: auto;
+  width: 180px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: block;
+  cursor: pointer;
+}
+
+/* desktop layout */
+@media (min-width: 1000px) {
 }

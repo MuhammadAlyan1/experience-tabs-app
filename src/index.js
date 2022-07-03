@@ -1,17 +1,40 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDom from "react-dom";
+import { useEffect, useState } from "react";
+// components
+import { Navigation } from "./navigation.js";
+import { Loading } from "./loading.js";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+// css
+import "./index.css";
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+function App() {
+  const [userData, setUserData] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+
+  async function fetchData() {
+    const url = "https://course-api.com/react-tabs-project";
+    const response = await fetch(url);
+    const data = await response.json();
+    setUserData(data);
+    setIsLoading(false);
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  return (
+    <div className="main-container">
+      <h1 className="main-heading">Experience</h1>
+      <Navigation data={userData} />
+      <button className="more-info-btn">more info</button>
+    </div>
+  );
+}
+
+ReactDom.render(<App />, document.querySelector("#root"));

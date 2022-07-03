@@ -1,0 +1,82 @@
+/*
+=============== 
+button-div
+===============  
+*/
+
+.button-div {
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.button-div button {
+  font-size: 1.25rem;
+  color: black;
+  background-color: var(--clr-body);
+  margin-bottom: 1rem;
+  margin-inline: 1rem;
+  padding: 0px;
+  position: relative;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.button-div button::after {
+  content: "";
+  height: 3px;
+  width: 100%;
+  background-color: var(--clr-blue);
+  right: 0;
+  left: 0;
+  bottom: -5px;
+  position: absolute;
+  display: block;
+  transform: scale(0);
+  transition: all 0.4s ease;
+}
+
+.button-div button:hover {
+  color: var(--clr-blue);
+}
+
+.button-div button:hover::after {
+  transform-origin: left;
+  transform: scale(1);
+}
+
+.button-div .selectedBtn {
+  color: var(--clr-blue);
+}
+
+.button-div .selectedBtn::after {
+  transform-origin: left;
+  transform: scale(1);
+}
+
+/*
+==========================
+buttons-details-container
+==========================
+*/
+
+@media (min-width: 1000px) {
+  .buttons-details-container {
+    max-width: 1100px;
+    margin-inline: auto;
+    display: flex;
+    column-gap: 5rem;
+  }
+
+  .title {
+    margin-top: 0px;
+  }
+
+  .button-div {
+    max-width: 100px;
+  }
+
+  .button-div button {
+    margin-bottom: 1.5rem;
+  }
+}

@@ -1,0 +1,48 @@
+/* 
+================
+company-detail
+================
+*/
+
+.title {
+  font-size: 1.25rem;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  color: var(--clr-heading);
+}
+
+.company {
+  font-weight: bold;
+  color: var(--clr-company-btn);
+  background-color: var(--clr-company-btn-background);
+  width: fit-content;
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+}
+
+.date {
+  color: var(--clr-paragraph);
+}
+
+/* 
+=================
+duties
+=================
+*/
+
+.duties p {
+  color: var(--clr-paragraph);
+  line-height: 1.3;
+  padding-left: 3rem;
+  position: relative;
+}
+
+.duties p::before {
+  content: "\27A4";
+  font-size: 1.25rem;
+  color: var(--clr-blue);
+  left: 10px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
